@@ -7,6 +7,10 @@
 
 //System Libraries Here
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
 using namespace std;
 
 //User Libraries Here
@@ -23,9 +27,9 @@ int main(int argc, char** argv) {
     
     //Menu with input of choice
     cout<<"Choose from the following Menu"<<endl;
-    cout<<"Problem 1 -> Author_Edition_Chapter_Problem_Description 1"<<endl;
-    cout<<"Problem 2 -> Author_Edition_Chapter_Problem_Description 2"<<endl;
-    cout<<"Problem 3 -> Author_Edition_Chapter_Problem_Description 3"<<endl;
+    cout<<"Problem 1 -> Gaddis_9thEd_Chap4_Prob11_MathTutor"<<endl;
+    cout<<"Problem 2 -> Savitch_9thEd_Chap3_Prob7_etox"<<endl;
+    cout<<"Problem 3 -> Savitch_9thEd_Chap3_Prob6_Finonacci"<<endl;
     cout<<"Problem 4 -> Author_Edition_Chapter_Problem_Description 4"<<endl;
     cout<<"Problem 5 -> Author_Edition_Chapter_Problem_Description 5"<<endl;
     cout<<"Problem 6 -> Author_Edition_Chapter_Problem_Description 6"<<endl;
@@ -38,13 +42,87 @@ int main(int argc, char** argv) {
     //Output the results
     switch(probNum){
         case 1: {
-            cout<<"Put problem 1 here "<<endl;break;
+            {
+            //Ser the random number
+            srand (static_cast<unsigned int>(time(0)));
+            //Declare Variables
+            unsigned short op1, op2, answer, result; 
+
+            //Initialize Variables
+            op1=rand()%900+100; //Three digit number
+            op2=rand()%1000;    //Any 1 to 3 digit number
+
+            //Process/Map inputs to outputs
+            result=op1+op2;
+
+            //Output data
+            cout<<"Test your addition skills, solve the following."<<endl;
+            cout<<setw(5)<<op1<<endl;
+            cout<<"+ "<<setw(3)<<op2<<endl;
+            cout<<"-----"<<endl<<(result>1000?" ":"  ");
+            cin>>answer;
+            cout<<(result==answer?"Correct":"Incorrect")<<endl;
+        }
+            break;
         }    
         case 2: {
             cout<<"Put problem 2 here "<<endl;break;
         }
         case 3: {
-            cout<<"Put problem 3 here "<<endl;break;
+            //Declare Variables
+            float aproxE, term, x;
+            int counter;
+
+            //Initialize Variables
+            aproxE=1.0f;
+            counter=1;
+            x=1.0f;
+            term=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Process/Map inputs to outputs
+            aproxE+=term;
+            cout<<"e^"<<x<<" approximately = "<<aproxE<<endl;
+            term*=x/counter++;
+
+            //Output data
+            cout<<"e^"<<x<<"       exactly = "<<exp(x)<<endl;
+            
+            break;
         }
         case 4: {
             cout<<"Put problem 4 here "<<endl;break;
@@ -66,7 +144,7 @@ int main(int argc, char** argv) {
         }
         default:cout<<"You choose to exit"<<endl;
     }
-   
+ 
     //Exit
     return 0;
 }
