@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     
     //Initialize Variables
     big = num1 > num2 ? num1 : num2 ; //Conditional Operator
-    sm = num1 < num2 ? num1 : num2 ;
+    sm  = num1 < num2 ? num1 : num2 ;
     
     
     //Output
