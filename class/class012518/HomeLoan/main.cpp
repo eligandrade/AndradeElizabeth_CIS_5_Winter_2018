@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
+ * Author: Elizabeth Andrade
  * Created on July 25, 2016, 11:30 AM
- * Purpose:  Retirement
+ * Purpose:  Home Loan
  */
 
 //System Libraries Here
@@ -54,8 +54,10 @@ int main(int argc, char** argv) {
                 <<setw(15)<<inEndMn
                 <<setw(15)<<mthPay
                 <<setw(15)<<prnPay<<endl;
-        loanAmt+=(inEndMn+mthPay);
+        loanAmt+=(inEndMn-mthPay);
     }
+    
+    cout<<"Final Payment at "<<nMonths<<" = "<<mthPay+loanAmt;
     //Exit stage right!
     return 0;
 }
