@@ -8,6 +8,8 @@
 //System Libraries
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
 //User Libraries
@@ -16,6 +18,10 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
+int comPlay();
+int humPlay();
+string winner(string, string);
+
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -26,7 +32,6 @@ int main(int argc, char** argv) {
     //Declare Variables
     const int MAX=52;
     int pscore, cscore, shuffle1, shuffle2, player, com;
-    unsigned int a, b, c, d;
     
     //Initialize Variables
     shuffle1=shuffle2=(rand()%52);
@@ -34,9 +39,38 @@ int main(int argc, char** argv) {
     shuffle1=player;
     shuffle2=com;
     
-    //Player
-    a=(2+rand()%13);
-    b=(rand()%4);
+    
+    //Play Cards
+    comPlay();
+    cout<<endl;
+    humPlay();
+    cout<<endl;
+            
+    //Output data
+    winner(a,c);
+    cout<<endl;
+    
+    
+    //Exit stage right!
+    return 0;
+}    
+    string winner(string a, string c){
+        if(a==c){
+            return "It's a Tie!";
+        }else if(a>c){
+            return "Player wins!";
+        }else{
+            return "Computer Wins!";
+        }
+        
+    }
+    
+
+
+int humPlay(){
+    //Declare
+    int a=(2+rand()%13);
+    int b=(rand()%4);
     
     cout<<"Player plays   :";
     
@@ -61,11 +95,15 @@ int main(int argc, char** argv) {
     }else{
         cout<<" of Clubs";
     }
-    cout<<endl;
-    
-    //Computer
-    c=(2+rand()%13);
-    d=(rand()%4);
+   
+}
+
+
+int comPlay(){
+        
+    //Declare
+    int c =(2+rand()%13);
+    int d =(rand()%4);
     
     cout<<"Computer plays :";
     
@@ -90,18 +128,8 @@ int main(int argc, char** argv) {
     }else{
         cout<<" of Clubs";
     }
-    cout<<endl;
-  
-    //Output data
-    cout<<endl;
-    if(a==c){
-        cout<<"It's a Tie!"<<endl;
-    }else if(a>c){
-        cout<<"Player wins!"<<endl;
-    }else{
-        cout<<"Computer Wins!"<<endl;
-    }
-    
-    //Exit stage right!
-    return 0;
+
 }
+    
+    
+    
